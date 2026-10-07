@@ -1,51 +1,236 @@
-document.addEventListener("DOMContentLoaded", function () {
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-    const links = document.querySelectorAll('nav a[href^="#"]');
-    const sections = document.querySelectorAll("main section");
-    const audio = document.querySelector("audio");
+<head>
+    <meta charset="UTF-8">
 
-    function mostrarTela(id) {
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-        sections.forEach(function (section) {
-            section.style.display = "none";
-        });
+    <title>AdaSamba | Samba, Pagode e MPB</title>
 
-        const tela = document.getElementById(id);
+    <meta name="description"
+          content="AdaSamba - Música, Samba, Pagode e MPB. Shows e apresentações.">
 
-        if (tela) {
-            tela.style.display = "flex";
-        }
+    <link rel="stylesheet" href="style.css">
+</head>
 
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-    }
+<body>
 
-    links.forEach(function (link) {
+    <header>
 
-        link.addEventListener("click", function (event) {
+        <h1>AdaSamba</h1>
 
-            event.preventDefault();
+        <nav>
 
-            const id = link.getAttribute("href").substring(1);
+            <a href="#inicio">Início</a>
 
-            mostrarTela(id);
+            <a href="#sobre">Sobre</a>
 
-            if (audio) {
-                audio.play().catch(function () {});
+            <a href="#shows">Shows</a>
+
+            <a href="#musicas">Músicas</a>
+
+            <a href="https://www.instagram.com/adasambaoficial/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Instagram
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section id="inicio">
+
+            <!-- ÁUDIO INVISÍVEL -->
+            <audio id="musica"
+                   autoplay
+                   loop
+                   preload="auto"
+                   playsinline
+                   style="display:none;">
+
+                <source
+                    src="vidssave.com%20Macumba%20-%20AdaSamba%20256KBPS.mp4"
+                    type="audio/mp4">
+
+            </audio>
+
+
+            <h2>AdaSamba</h2>
+
+            <p>
+                Samba, Pagode e Música Popular Brasileira
+            </p>
+
+
+            <a href="https://eventosaproducoes-sketch.github.io/-A-Produ-es-e-Eventos/"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                Contrate o AdaSamba
+
+            </a>
+
+        </section>
+
+
+        <section id="sobre">
+
+            <h2>Sobre o AdaSamba</h2>
+
+            <p>
+                AdaSamba é um projeto musical dedicado ao samba,
+                pagode e à música popular brasileira.
+            </p>
+
+        </section>
+
+
+        <section id="shows">
+
+            <h2>Shows</h2>
+
+            <p>
+                Apresentações de samba, pagode e música popular
+                brasileira para eventos, festas e celebrações.
+            </p>
+
+        </section>
+
+
+        <section id="musicas">
+
+            <h2>Músicas</h2>
+
+            <p>
+                Conheça o repertório do AdaSamba e acompanhe
+                seus lançamentos e apresentações.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © AdaSamba
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const links =
+                document.querySelectorAll('nav a[href^="#"]');
+
+            const sections =
+                document.querySelectorAll("main section");
+
+            const audio =
+                document.getElementById("musica");
+
+
+            function mostrarTela(id) {
+
+                sections.forEach(function (section) {
+
+                    section.style.display = "none";
+
+                });
+
+
+                const tela =
+                    document.getElementById(id);
+
+
+                if (tela) {
+
+                    tela.style.display = "flex";
+
+                }
+
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
             }
+
+
+            function iniciarMusica() {
+
+                if (audio) {
+
+                    audio.play().catch(function () {
+
+                        // O navegador pode exigir uma interação
+                        // do visitante antes de liberar o som.
+
+                    });
+
+                }
+
+            }
+
+
+            links.forEach(function (link) {
+
+                link.addEventListener("click", function (event) {
+
+                    event.preventDefault();
+
+                    const id =
+                        link.getAttribute("href").substring(1);
+
+                    mostrarTela(id);
+
+                    iniciarMusica();
+
+                });
+
+            });
+
+
+            document.addEventListener(
+                "click",
+                iniciarMusica,
+                { once: true }
+            );
+
+
+            document.addEventListener(
+                "touchstart",
+                iniciarMusica,
+                { once: true }
+            );
+
+
+            document.addEventListener(
+                "keydown",
+                iniciarMusica,
+                { once: true }
+            );
+
+
+            mostrarTela("inicio");
+
+            iniciarMusica();
+
         });
-    });
 
-    document.addEventListener("click", function () {
+    </script>
 
-        if (audio) {
-            audio.play().catch(function () {});
-        }
+</body>
 
-    }, { once: true });
-
-    mostrarTela("inicio");
-
-});
+</html>
