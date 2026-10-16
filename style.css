@@ -523,3 +523,213 @@ footer {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
+
+/* =====================================
+   ADASAMBA — RESPONSIVIDADE GERAL
+   Celular, tablet e computador
+===================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
+}
+
+img {
+    height: auto;
+}
+
+/* Menu e cabeçalho em telas menores */
+@media (max-width: 768px) {
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 16px 12px;
+        gap: 12px;
+        text-align: center;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: clamp(24px, 6vw, 32px);
+        line-height: 1.2;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 6px 12px;
+    }
+
+    nav a {
+        display: inline-block;
+        padding: 8px 4px;
+        font-size: 14px;
+        line-height: 1.4;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    main {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow-x: hidden;
+    }
+
+    main section {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: 24px 14px;
+        overflow-wrap: anywhere;
+    }
+
+    main section h2 {
+        font-size: clamp(25px, 7vw, 34px);
+        line-height: 1.2;
+    }
+
+    main section h3 {
+        line-height: 1.35;
+        overflow-wrap: anywhere;
+    }
+
+    main section p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    main section img {
+        max-width: 100%;
+    }
+
+    /* Músicas: dois cartões por linha */
+    .lista-musicas {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px 10px;
+        width: 100%;
+        padding: 0;
+        margin: 24px auto;
+    }
+
+    .musica-item {
+        min-width: 0;
+        width: 100%;
+        padding: 10px 6px;
+    }
+
+    .rotulo-compra {
+        width: 100%;
+        max-width: 170px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .musica-item h3 {
+        font-size: 14px;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
+    }
+
+    /* Capa do álbum */
+    .album-destaque {
+        width: 100%;
+        max-width: 420px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .album-destaque img {
+        display: block;
+        width: 100%;
+        max-width: 360px;
+        height: auto;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    /* Ciência, história e jogo */
+    .ciencia-pagina {
+        width: 100%;
+        padding: 22px 12px;
+    }
+
+    .ciencia-card,
+    .ciencia-episodio,
+    .ciencia-quiz {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .ciencia-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .ciencia-linha-tempo {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    /* Rodapé */
+    footer {
+        width: 100%;
+        padding: 20px 12px;
+        text-align: center;
+        overflow-wrap: anywhere;
+    }
+}
+
+/* Celulares com telas estreitas */
+@media (max-width: 380px) {
+
+    nav {
+        gap: 4px 8px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    main section {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .lista-musicas {
+        gap: 14px 7px;
+    }
+
+    .musica-item {
+        padding: 8px 4px;
+    }
+
+    .musica-item h3 {
+        font-size: 12px;
+    }
+}
