@@ -733,30 +733,3 @@ img {
         font-size: 12px;
     }
 }
-
-/* Fundo fotográfico da página Shows */
-#shows {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 0.88) 0%,
-            rgba(0, 0, 0, 0.58) 48%,
-            rgba(0, 0, 0, 0.22) 100%
-        ),
-        url("ada-foto-site-1200.jpg") center 35% / cover no-repeat;
-}
-
-/* Zoom suave na foto */
-#shows {
-    background-size: cover;
-    animation: nenhumZoom 0.01s linear;
-}
-
-@media (max-width: 768px) {
-    #shows {
-        background-position: center center;
-    }
-}
