@@ -746,3 +746,22 @@ img {
         ),
         url("ada-shows.png") center center / cover no-repeat;
 }
+/* CORREÇÃO: exibir somente a seção selecionada */
+main > section {
+    display: none;
+}
+
+/* A seção inicial é mostrada pelo JavaScript */
+main > section.tela-ativa {
+    display: flex;
+}
+
+/* Evita conteúdo das seções sobreposto ao cabeçalho */
+main {
+    padding-top: 80px;
+}
+
+main > section {
+    box-sizing: border-box;
+    width: 100%;
+}
