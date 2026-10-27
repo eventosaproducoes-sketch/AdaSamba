@@ -733,3 +733,16 @@ img {
         font-size: 12px;
     }
 }
+
+/* Foto de fundo da seção Shows */
+#shows {
+    position: relative;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.82) 0%,
+            rgba(0, 0, 0, 0.50) 55%,
+            rgba(0, 0, 0, 0.20) 100%
+        ),
+        url("ada-shows.png") center center / cover no-repeat;
+}
