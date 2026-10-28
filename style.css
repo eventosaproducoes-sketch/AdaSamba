@@ -769,3 +769,33 @@ main > section {
     box-sizing: border-box;
     width: 100%;
 }
+
+/* FUNDO SUAVE DA PÁGINA SOBRE */
+#sobre.sobre-foto {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: #111111;
+}
+
+/* IMAGEM DE FUNDO COM TRANSPARÊNCIA */
+#sobre.sobre-foto::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("sobre-adasamba-fundo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    opacity: 0.18;
+    z-index: -1;
+}
+
+/* MANTÉM O TEXTO NÍTIDO */
+#sobre.sobre-foto .sobre-conteudo {
+    position: relative;
+    z-index: 1;
+}
+
