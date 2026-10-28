@@ -785,11 +785,13 @@ main > section {
     inset: 0;
 
     background-image: url("sobre-adasamba-fundo.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+   
+background-size: 100% auto;
+background-position: center bottom;
+background-repeat: no-repeat;
 
-    opacity: 0.18;
+opacity: 0.28;
+
     z-index: -1;
 }
 
